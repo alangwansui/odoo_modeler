@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <!-- modeler table -->
+    <t t-name="funenc.modeler_controller_init_py">
+# -*- coding: utf-8 -*-
+
+from . import controllers
+    </t>
+</templates>

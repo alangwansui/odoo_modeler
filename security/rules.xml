@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- 只能查看和操作自己的 -->
+    <record id="rule_for_project" model="ir.rule">
+        <field name="name">rule for poject</field>
+        <field name="model_id" ref="odoo_modeler.model_odoo_modeler_model_project"/>
+        <field name="domain_force">[('create_uid', '=', user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+</odoo>

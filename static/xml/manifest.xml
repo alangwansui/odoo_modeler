@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <!-- modeler table -->
+    <t t-name="funenc.modeler_manifest">
+# -*- coding: utf-8 -*-
+{
+    'name': "<t t-esc="project.name"/>",
+    'summary': """<t t-esc="project.summary"/>""",
+    'description': """
+        <t t-esc="project.description"/>
+    """,
+
+    'author': "<t t-esc="project.author"/>",
+    'website': "<t t-esc="project.website"/>",
+
+    'category': '<t t-esc="project.category"/>',
+    'version': '<t t-esc="project.version"/>',
+
+    'depends': [<t t-esc="project.depends || ''"/>],
+
+    'data': [
+        'security/ir.model.access.csv',
+        <t t-foreach="view_xmls" t-as="xml">"<t t-esc="xml"/>",
+        </t>
+    ],
+
+    'qweb': [
+    ],
+    'application': True
+}
+    </t>
+</templates>

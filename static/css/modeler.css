@@ -1,0 +1,190 @@
+/**
+  modeler styles
+*/
+
+.modeler_client {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: auto;
+}
+
+.modeler_client .modeler_container {
+  width: 50000px;
+  height: 50000px;
+}
+
+.add_table .export_table .gen_code {
+    margin-left: 10px;
+}
+
+.node-column {
+	background-color: rgba(255, 255, 255, 0.72);
+	list-style-type: none;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+	margin: 0px;
+}
+
+.node-column div {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100px;
+  padding-right: 5px;
+}
+
+.node-column div a {
+  margin-left: 5px;
+}
+
+ul.nodecollection-container.ui-sortable {
+	margin: 0px;
+}
+
+.node-view{
+	width: 320px;
+	min-width: 200px;
+	background-color: #e8e8e8;
+	padding: 5px;
+	border: 1px solid #000;
+	margin: 0px;
+
+}
+
+.node-view ul{
+	padding: 0px;
+}
+
+.node-view li{
+		border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.node-view .add-column{
+    width: 100%;
+}
+
+.item {
+    position: absolute;
+    background-color: #C2C2C2;
+    border: 1px solid rgb(184, 184, 184);
+    width: 100px;
+    border-radius: 4px;
+    padding: 2px 5px 5px 5px;
+    width: auto;
+    float: left;
+    z-index: 10;
+    min-width: 260px;
+}
+
+
+.node-Blue{
+background-color: #5DE7EC;
+}
+
+.node-Green {
+background-color: #C4EC5D;
+}
+
+.node-Yellow {
+background-color: #ECE15D;
+}
+
+.node-Red {
+background-color: #F7D1D6;
+}
+
+.node-Yellow-light {
+background-color: #FFF8A6;
+}
+
+.node-Grey {
+background-color: #F1F1F1;
+}
+
+.toolbox button{
+	padding: 5px;
+
+}
+
+.modeler_label {
+	font-size: 14px;
+  z-index: 11;
+  padding: 5px;
+  color: white;
+  background-color:rgb(60, 60, 60);
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.btn-default {
+  color: #333;
+  background-color: #FFF;
+  border-color: #ccc;
+}
+
+.btn-container {
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.34);
+  border-color: #ccc;
+}
+
+html .o_web_client > .o_main .o_main_content {
+  width: 100%;
+}
+
+.jtk-drag-select * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;    
+}  
+
+.o_form_view .o_form_label {
+  /* margin: 0 5px 0 0; */
+  margin: initial;
+  font-size: 1.08333333rem;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.o_form_view.o_form_nosheet {
+  max-width: 900px;
+  margin: 10px auto;
+  display: block;
+  padding-top: 24px;
+  padding-right: 16px;
+  padding-bottom: 24px;
+  padding-left: 16px;
+  -webkit-box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
+  box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
+}
+
+.card {
+  border: none;
+  -webkit-box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
+  box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
+  margin-bottom: 30px;
+}
+
+.navbar-custom .dropdown-menu.show:before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  top: -6px;
+  left: 18px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-box-shadow: -2px -4px 0.5rem rgba(108,118,134,.1);
+  box-shadow: -2px -4px 0.5rem rgba(108,118,134,.1);
+}
+
+.ref_project{
+  
+}

@@ -1,0 +1,41 @@
+
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="odoo_modeler.modeler_config_form">
+            <field name="name">模型配置</field>
+            <field name="model">odoo_modeler.modeler_config</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label"
+                               for="project_dir">project_dir</label>
+                        <div class="col-sm-10">
+                            <field name="project_dir"/>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!--月计划填写-->
+        <record id="odoo_modeler.modeler_config_act_server" model="ir.actions.server">
+            <field name="name">模型配置</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_odoo_modeler_modeler_config" />
+            <field name="state">code</field>
+            <field name="code">
+                action = model.jump_config_widow()
+            </field>
+        </record>
+
+        
+        <menuitem action="odoo_modeler.modeler_config_act_server"
+                  id="odoo_modeler.modeler_config_menu"
+                  name="系统配置"
+                  parent="odoo_modeler.menu_root"/>
+    </data>
+</odoo>
+
+
+    

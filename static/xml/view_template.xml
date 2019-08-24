@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="funenc.modeler_view_template">
+<odoo>
+    <data>
+        <!-- lsit -->
+        <record model="ir.ui.view" t-attrf-id="{{escape_dot(table.project_name)}}.{{escape_dot(table.name)}}_list">
+            <field name="name"><t t-esc="table.name"/> list </field>
+            <field name="model"><t t-esc="table.project_name"/>.<t t-esc="table.name"/></field>
+            <field name="arch" type="xml">
+                <tree>
+                    <t t-foreach="fields" t-as="field"><t t-esc="field.xml"/>
+                    </t>
+                </tree>
+            </field>
+        </record>
+
+        <!-- form -->
+        <record model="ir.ui.view" t-attrf-id="{{escape_dot(table.project_name)}}.{{escape_dot(table.name)}}_form">
+            <field name="name"><t t-esc="table.name"/> form </field>
+            <field name="model"><t t-esc="table.project_name"/>.<t t-esc="table.name"/></field>
+            <field name="arch" type="xml">
+                <form>
+                    <t t-foreach="fields" t-as="field"><div class="form-group row">
+                        <label t-attr-for="{{field.field_info.name}}" class="col-sm-2 col-form-label"><t t-esc="field.field_info.name"/></label>
+                        <div class="col-sm-10">
+                            <t t-esc="field.xml"/>
+                        </div>
+                    </div>
+                    </t>
+                </form>
+            </field>
+        </record>
+
+        <!-- action  -->
+        <record model="ir.actions.act_window" t-attrf-id="{{escape_dot(table.project_name)}}.{{escape_dot(table.name)}}_act_window">
+            <field name="name"><t t-esc="table.name"/></field>
+            <field name="res_model"><t t-esc="table.project_name"/>.<t t-esc="table.name"/></field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- projects menu -->
+        <menuitem t-attrf-name="{{table.cn_name}}"
+              t-attrf-id="{{escape_dot(table.project_name)}}.{{escape_dot(table.name)}}_menu"
+              t-attrf-parent="{{escape_dot(table.project_name)}}.menu_root"
+              t-attrf-action="{{escape_dot(table.project_name)}}.{{escape_dot(table.name)}}_act_window"/>
+    </data>
+</odoo>
+    </t>
+</templates>

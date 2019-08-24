@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <!-- modeler table -->
+<t t-name="funenc.modeler_model_template">
+# -*- coding: utf-8 -*-
+
+from odoo import models, fields, api
+
+
+class <t t-esc="table_info.model_class_name"/>(models.Model):
+    '''
+    model project
+    '''
+    _name = '<t t-esc="table_info.project_name"/>.<t t-esc="table_info.name"/>'
+    
+    <t t-foreach="fields_infos" t-as="field"><t t-esc="field"/>
+    </t><t t-foreach="fields" t-as="field"><t t-if="field.field_info.compute_type == 'auto'"><t t-esc="field.field_info.compute_method"/></t><t t-if="field.field_info.compute_type == 'custom'"><t t-esc="field.field_info.custom_compute"/></t>
+    </t>
+</t>
+
+</templates>

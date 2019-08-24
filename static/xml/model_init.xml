@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <!-- modeler table -->
+    <t t-name="funenc.modeler_model_init_py">
+# -*- coding: utf-8 -*-
+
+<t t-foreach="model_names" t-as="model_name">
+from . import <t t-esc="model_name"/>
+</t>
+    </t>
+
+</templates>

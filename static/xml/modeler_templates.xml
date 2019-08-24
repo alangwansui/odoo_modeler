@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <!-- modeler table -->
+    <t t-name="funenc.modeler_table_template">
+        <div t-attf-id="modeler_table_{{widget.table_info.id}}" 
+        t-attf-class="node-view item {{widget.get_table_color()}}">
+            <div>
+                <p>
+                    <span class="table_name">
+                        <t t-esc="widget.table_info.cn_name"/>
+                        -
+                        <t t-esc="widget.table_info.name"/>
+                    </span>
+                    <a href="#" class="btn edit_table edit btn-xs btn-container">
+                        <span class="fa fa-edit"></span>
+                    </a>
+                    <a href="#" class="btn del_table delete btn-xs btn-container">
+                        <span class="fa fa-trash-o"></span>
+                    </a>
+                    <a href="#" class="btn gen_table delete btn-xs btn-container">
+                        <span class="fa fa-file"></span>
+                    </a>
+                </p>
+                <ul class="nodecollection-container">
+                </ul>
+                <a href="#" class="btn add add-column btn-xs btn-container">
+                    <span class="fa fa-plus"></span>add new field
+                </a>
+            </div>
+        </div>
+    </t>
+    <!-- 字段信息 -->
+    <t t-name="funenc.modeler.field_item">
+        <li t-attf-class="node-column field_{{widget.field_info.id}}" t-attf-id="modeler_field_{{widget.field_info.id}}">
+            <b>
+                <span class="field_name" data-toggle="tooltip" data-placement="top" t-att-title="widget.field_info.remark">
+                    <t t-esc="widget.field_info.name"/>
+                    <t t-esc="widget.field_info.cn_name"/>
+                </span>
+                <div class="tooltip bs-tooltip-top" role="tooltip">
+                    <div class="arrow"></div>
+                    <div class="tooltip-inner">
+                        Some tooltip text!
+                    </div>
+                </div>
+            </b>
+            <i>
+                <span class="field_type">
+                    (<t t-esc="widget.field_info.field_type"/>)
+                </span>
+            </i>
+            <div>
+                <a href="#" class="btn edit btn-xs btn-container">
+                    <span class="fa fa-edit"></span>
+                </a>
+                <a href="#" class="btn delete btn-xs btn-container">
+                    <span class="fa fa-remove"></span>
+                </a>
+            </div>
+        </li>
+    </t>
+</templates>

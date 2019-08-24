@@ -1,0 +1,135 @@
+<odoo>
+    <data>
+
+        <!-- client action -->
+        <record id="project_action_client" model="ir.actions.client">
+            <field name="name">建模工具</field>
+            <field name="tag">ModelerClient</field>
+            <field name="target">main</field>
+        </record>
+
+        <!-- list -->
+        <record model="ir.ui.view" id="odoo_modeler.projects_list">
+            <field name="name">项目列表</field>
+            <field name="model">odoo_modeler.model_project</field>
+            <field name="arch" type="xml">
+                <tree js_class="ModelerProjectList">
+                    <field name="name"/>
+                    <field name="cn_name"/>
+                    <field name="tables_count" />
+                    <field name="summary" />
+                    <field name="description" />
+                    <field name="author" />
+                    <field name="website" />
+                    <field name="category" />
+                    <field name="depends" />
+                    <field name="version" />
+                    <field name="remark" />
+                    <button string="edit model"
+                            type="action"
+                            name="%(project_action_client)d" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- form -->
+        <record model="ir.ui.view" id="odoo_modeler.project_form">
+            <field name="name">项目表单</field>
+            <field name="model">odoo_modeler.model_project</field>
+            <field name="arch" type="xml">
+                <form string="project">
+                    <div class="form-group row">
+                        <label for="cn_name" class="col-sm-2 col-form-label">cn name</label>
+                        <div class="col-sm-10">
+                            <field name="cn_name" required="1" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-2 col-form-label">name</label>
+                        <div class="col-sm-10">
+                            <field name="name" required="1" />
+                        </div>
+                    </div>
+                    <!-- 依赖的模块 -->
+                    <div class="form-group row">
+                        <label for="out_projects" class="col-sm-2 col-form-label">out_projects</label>
+                        <div class="col-sm-10">
+                            <field name="out_projects" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="summary" class="col-sm-2 col-form-label">summary</label>
+                        <div class="col-sm-10">
+                            <field name="summary" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="description" class="col-sm-2 col-form-label">description</label>
+                        <div class="col-sm-10">
+                            <field name="description" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="author" class="col-sm-2 col-form-label">author</label>
+                        <div class="col-sm-10">
+                            <field name="author" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="website" class="col-sm-2 col-form-label">website</label>
+                        <div class="col-sm-10">
+                            <field name="website" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="category" class="col-sm-2 col-form-label">category</label>
+                        <div class="col-sm-10">
+                            <field name="category" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="depends" class="col-sm-2 col-form-label">depends</label>
+                        <div class="col-sm-10">
+                            <field name="depends" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="version" class="col-sm-2 col-form-label">version</label>
+                        <div class="col-sm-10">
+                            <field name="version" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="tables_count" class="col-sm-2 col-form-label">tables_count</label>
+                        <div class="col-sm-10">
+                            <field name="tables_count" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="remark" class="col-sm-2 col-form-label">remark</label>
+                        <div class="col-sm-10">
+                            <field name="remark" />
+                        </div>
+                    </div>
+
+                </form>
+            </field>
+        </record>
+
+        <!-- action -->
+        <record model="ir.actions.act_window" id="odoo_modeler.project_action_window">
+            <field name="name">表</field>
+            <field name="res_model">odoo_modeler.model_project</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- root menu -->
+        <menuitem name="odoo_modeler" id="odoo_modeler.menu_root"/>
+
+        <!-- projects menu -->
+        <menuitem name="projects"
+              id="odoo_modeler.tables_menu"
+              parent="odoo_modeler.menu_root"
+              action="odoo_modeler.project_action_window"/>
+    </data>
+</odoo>

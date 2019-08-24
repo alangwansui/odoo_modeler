@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <!-- modeler table -->
+    <t t-name="funenc.modeler_menu_root">
+<odoo>
+    <data>
+        <menuitem t-attrf-name="{{project_name}}" t-attrf-id="{{project_name}}.menu_root"/>
+    </data>
+</odoo>
+    </t>
+</templates>

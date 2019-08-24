@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_odoo_modeler_model_project,odoo_modeler.model_project,model_odoo_modeler_model_project,,1,1,1,1
+access_odoo_modeler_model_table_fields,odoo_modeler.model_table_fields,model_odoo_modeler_model_table_fields,,1,1,1,1
+access_odoo_modeler_model_tables,odoo_modeler.model_tables,model_odoo_modeler_model_tables,,1,1,1,1
+access_odoo_modeler_model_model_table_ui,odoo_modeler.model_table_ui,model_odoo_modeler_model_table_ui,,1,1,1,1
+access_odoo_modeler_model_field_selections,odoo_modeler.model_field_selections,model_odoo_modeler_model_field_selections,,1,1,1,1
+access_odoo_modeler_vscode_snippets,odoo_modeler.vscode_snippets,model_odoo_modeler_vscode_snippets,,1,1,1,1
+access_odoo_modeler_modeler_config,odoo_modeler.modeler_config,model_odoo_modeler_modeler_config,,1,1,1,1

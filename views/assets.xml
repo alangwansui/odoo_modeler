@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<template id="odoo_modeler_res" name="odoo_modeler_res" inherit_id="web.assets_backend">
+			<xpath expr="." position="inside">
+                <!-- css -->
+				<link rel="stylesheet" href="/odoo_modeler/static/css/button.css" />
+				<link rel="stylesheet" href="/odoo_modeler/static/css/modeler.css" />
+                <!-- js -->
+				<script type="application/javascript" src="/odoo_modeler/static/lib/jsplumb.min.js" />
+				<script type="application/javascript" src="/odoo_modeler/static/lib/FileSaver.min.js" />
+				<script type="application/javascript" src="/odoo_modeler/static/lib/jszip.min.js" />
+				<script type="application/javascript" src="/odoo_modeler/static/lib/popper.js" />
+				
+				<script type="application/javascript" src="/odoo_modeler/static/js/form_controller_ext.js" />
+				<script type="application/javascript" src="/odoo_modeler/static/js/modeler_client.js" />
+				<script type="application/javascript" src="/odoo_modeler/static/js/modeler_table.js" />
+				<script type="application/javascript" src="/odoo_modeler/static/js/model_table_field.js" />
+				<script type="application/javascript" src="/odoo_modeler/static/js/modeler_project_list.js" />
+			</xpath>
+		</template>
+	</data>
+</odoo>

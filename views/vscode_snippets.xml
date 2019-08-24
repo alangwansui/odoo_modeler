@@ -1,0 +1,56 @@
+
+<odoo>
+    <data>
+        
+        <record model="ir.ui.view" id="odoo_modeler.vscode_snippets_list">
+            <field name="name">vs code snippets</field>
+            <field name="model">odoo_modeler.vscode_snippets</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="source"/>
+                    <field name="target"/>
+                    
+                </tree>
+            </field>
+        </record>
+
+        
+        <record model="ir.ui.view" id="odoo_modeler.vscode_snippets_form">
+            <field name="name">vs code snippets</field>
+            <field name="model">odoo_modeler.vscode_snippets</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="source">source</label>
+                        <div class="col-sm-10">
+                            <field name="source"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="target">target</label>
+                        <div class="col-sm-10">
+                            <field name="target"/>
+                        </div>
+                    </div>
+                    
+                </form>
+            </field>
+        </record>
+
+        
+        <record model="ir.actions.act_window" id="odoo_modeler.vscode_snippets_act_window">
+            <field name="name">vscode_snippets</field>
+            <field name="res_model">odoo_modeler.vscode_snippets</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        
+        <menuitem action="odoo_modeler.vscode_snippets_act_window"
+                  id="odoo_modeler.vscode_snippets_menu"
+                  name="vscode snappe"
+                  parent="odoo_modeler.menu_root"/>
+    </data>
+</odoo>
+
+
+    

@@ -1,0 +1,54 @@
+<odoo>
+    <data>
+
+        <!-- list -->
+        <record model="ir.ui.view" id="odoo_modeler.tables_list">
+            <field name="name">表格</field>
+            <field name="model">odoo_modeler.model_tables</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="cn_name" />
+                    <field name="name"/>
+                    <field name="tree_js_class"/>
+                    <field name="fields_count"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- form -->
+        <record model="ir.ui.view" id="odoo_modeler.tables_form">
+            <field name="name">表格</field>
+            <field name="model">odoo_modeler.model_tables</field>
+            <field name="arch" type="xml">
+                <form string="model modeler">
+                    <group>
+                        <field name="cn_name" />
+                        <field name="name" />
+                        <field name="project_id" />
+                        <field name="table_fields" class="oe_read_only" options="{'no_open': True, 'no_create_edit': True}">
+                            <tree>
+                                <field name="name" />
+                                <field name="field_type" />
+                                <field name="remark" />
+                            </tree>
+                        </field>
+                        <field name="tree_js_class" />
+                        <field name="remark" />
+                    </group>
+                    <footer>
+                        <button special="save_and_exit" string="save" />
+                        <button special="cancel" string="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- action -->
+        <record model="ir.actions.act_window" id="odoo_modeler.tables_action_window">
+            <field name="name">tables window</field>
+            <field name="res_model">odoo_modeler.model_tables</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,47 @@
+<odoo>
+  <data>
+    <!-- form -->
+    <record model="ir.ui.view" id="odoo_modeler.field_form">
+      <field name="name">字段m</field>
+      <field name="model">odoo_modeler.model_table_fields</field>
+      <field name="arch" type="xml">
+          <form string="model modeler">
+              <group>
+                  <field name="cn_name" required="1" />
+                  <field name="name" />
+                  <field name="table_id" invisible="1"/>
+                  <field name="field_type" required="1" />
+                  <field name="selections" attrs="{'invisible': [('field_type', '!=', 'Selection')]}">
+                      <tree>
+                          <field name="key" />
+                          <field name="val" />
+                      </tree>
+                  </field>
+                  <field name="comodel_id" attrs="{'invisible': [('field_type', 'not in', ['Many2many', 'Many2one', 'One2many'])]}" />
+                  <field name="inverse_name" attrs="{'invisible': ['|', ('comodel_id', '=', False),('field_type', '!=', 'One2many')]}" options="{'no_open': True, 'no_create_edit': True}" />
+                  <!-- many2many 相关字段 -->
+                  <field name="relation" attrs="{'invisible': [('field_type', '!=', 'Many2many')]}" />
+                  <field name="col1" attrs="{'invisible': [('field_type', '!=', 'Many2many')]}" />
+                  <field name="col2" attrs="{'invisible': [('field_type', '!=', 'Many2many')]}" />
+                  <field name="related" />
+                  <field name="default" />
+                  <field name="compute_type" />
+                  <field name="compute" attrs="{'invisible': [('compute_type', '=', False)]}" />
+                  <field name="compute_depends" attrs="{'invisible': [('compute_type', '=', 'custom')]}" />
+                  <field name="compute_method" attrs="{'invisible': [('compute_type', '=', 'custom')]}" />
+                  <field name="custom_compute" attrs="{'invisible': [('compute_type', '=', 'auto')]}" />
+                  <field name="domain" />
+                  <field name="domain_remark" />
+                  <field name="attrs" />
+                  <field name="help" />
+                  <field name="remark" />
+              </group>
+              <footer>
+                <button special="save_and_exit" string="save" />
+                  <button special="cancel" string="cancel" />
+              </footer>
+          </form>
+      </field>
+    </record>
+  </data>
+</odoo>
